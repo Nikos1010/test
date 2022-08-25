@@ -6,6 +6,7 @@ exports.getAllNotes = async (req, res) => {
         username: 1,
         name: 1
     })
+    if(notes.length < 1) return res.status(404).json({ message: 'No file found'})
     res.json(notes)
 }
 

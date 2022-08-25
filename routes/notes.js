@@ -1,5 +1,5 @@
 const notesRouter = require('express').Router()
-const { getAllNotes, getNote, updatedNote, postAddNote } = require('../controllers/notes')
+const { getAllNotes, getNote, updatedNote, postAddNote, deletedNote } = require('../controllers/notes')
 
 notesRouter.get('/', getAllNotes)
 
