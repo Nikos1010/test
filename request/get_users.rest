@@ -1,4 +1,7 @@
 GET http://localhost:3001/api/users
 
 ####
-GET http://localhost:3001/api/users/id
+GET http://localhost:3001/api/users/631766421234963e7dc68466
+
+#### 400
+GET http://localhost:3001/api/users/631766421234963e7dc6846

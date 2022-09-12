@@ -26,7 +26,7 @@ const initialNotes = [
 const getAllContentFromNotes = async () => {
   const response = await api.get('/api/notes')
   return {
-    user: response.body.user,
+    user: response.body.map(user => user.user),
     contents: response.body.map(note => note.content),
     response
   }
@@ -44,10 +44,15 @@ const getUsers = async () => {
   return userDB.map(user => user.toJSON())
 }
 
+const getUser = async (id) => {
+  return await User.findById(id)
+}
+
 module.exports = {
   api,
   initialNotes,
   getAllContentFromNotes,
   getUsers,
+  getUser,
   createUser
 }

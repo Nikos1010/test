@@ -49,7 +49,6 @@ exports.postAddNote = async (req, res, next) => {
   } = req.body
 
   const { userId } = req
-
   const user = await User.findById(userId)
 
   if (!content) {
@@ -68,7 +67,7 @@ exports.postAddNote = async (req, res, next) => {
   try {
     const savedNote = await newNote.save()
 
-    user.notes = user.note.concat(savedNote._id)
+    user.notes = user.notes.concat(savedNote._id)
     await user.save()
 
     res.status(201).json(savedNote)

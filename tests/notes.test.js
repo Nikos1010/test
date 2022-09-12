@@ -30,10 +30,15 @@ describe('test of notes', () => {
       const { contents } = await getAllContentFromNotes()
       expect(contents).toContain('Desarrollando en Express')
     })
+
+    // test('have a user add', async () => {
+    //   const { user } = await getAllContentFromNotes()
+    //   console.log(user)
+    // })
   })
 
   afterAll(async () => {
-    mongoose.connection.close()
+    await mongoose.connection.close()
     await server.close()
   })
 })

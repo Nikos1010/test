@@ -10,6 +10,7 @@ const notesRouter = require('./routes/notes')
 const userRouter = require('./routes/users')
 const notFound = require('./middleware/notFound')
 const handleErrors = require('./middleware/handleErrors')
+const loginRouter = require('./routes/login')
 
 const app = express()
 
@@ -44,6 +45,8 @@ app.get('/', (req, res) => {
 app.use('/api/notes', notesRouter)
 
 app.use('/api/users', userRouter)
+
+app.use('/api/login', loginRouter)
 
 // The error handler must be before any other error middleware and after all controllers
 app.use(Sentry.Handlers.errorHandler())

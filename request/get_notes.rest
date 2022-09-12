@@ -1,4 +1,10 @@
 GET http://localhost:3001/api/notes
 
 ####
-GET http://localhost:3001/api/notes/id
+GET http://localhost:3001/api/notes/6318cd109e504d1da923da29
+
+#### 400
+GET http://localhost:3001/api/notes/6318cd109e504d1da923da2
+
+#### 404
+GET http://localhost:3001/api/notes/6318cd109e504d1da923da26
