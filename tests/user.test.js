@@ -75,12 +75,11 @@ describe('Users ->', () => {
       await api
         .put(`/api/users/${id}`)
         .send(userModified)
-        .expect(200)
+        .expect(200) // 204
         .expect('Content-Type', /application\/json/)
 
       const usersAtEnd = await getUser(id)
       const { name, username, passwordHash } = usersAtEnd
-      console.log(passwordHash, userModified.password)
 
       const boolean = await bcrypt.compare(userModified.password, passwordHash)
 

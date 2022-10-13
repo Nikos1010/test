@@ -13,6 +13,7 @@ describe('test of notes', () => {
       await notesObject.save()
     }
   })
+
   describe('GET response in the notes', () => {
     test('notes are returned as JSON', async () => {
       await api
@@ -39,6 +40,6 @@ describe('test of notes', () => {
 
   afterAll(async () => {
     await mongoose.connection.close()
-    await server.close()
+    server.close()
   })
 })
